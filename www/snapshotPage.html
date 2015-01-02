@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>snapshotPage</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<button onClick="callNative();">saveBtn</button><br>
+<script>
+function callNative() {
+    // Note : InAppBrowser 似乎沒有 device 物件, 目前以URL判別是iOS或Android
+	if(location.href.indexOf("android_asset") > -1){
+		CustomInAppBrowser.saveImage();
+	} else {
+		window.location  = 'custominappbrowser://';
+	}
+}    		
+for(var i=0; i<50; i++) {
+	document.writeln(i+" "+i+" "+i+" "+i+" "+i+" "+i+" "+i+" "+i+" "+i+"<br>");
+}
+</script>
+</body>
+</html>
